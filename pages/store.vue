@@ -1,7 +1,7 @@
 <template>
   <div>
-    <h1>ツイッターキャンペーン年間プラン</h1>
-    <h2>19800円(税込)/年間</h2>
+    <h3>ツイッターキャンペーン年間プラン</h3>
+    <p>XX,XXX円(税込)/年間</p>
     <stripe-checkout
       ref="checkoutRef"
       mode="subscription"
@@ -27,11 +27,11 @@ export default {
       loading: false,
       lineItems: [
         {
-          price: process.env.price, // The id of the one-time price you created in your Stripe dashboard
+          price: process.env.price,
           quantity: 1,
         },
       ],
-      successURL: process.env.baseUrl,
+      successURL: `${process.env.baseUrl}/success`,
       cancelURL: process.env.baseUrl,
     };
   },
